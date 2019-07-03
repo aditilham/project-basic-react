@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./UmbrellaCorporation3.png";
+import "./App.css";
+import DisplayInformation from "./component/promps-state";
 
-function App() {
+
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      information: "Welcome To Umbrella Corporation",
+      command: "Umbrella Corp. © 2019"
+    }
+  }
+
+
+// function App() {
+render() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <DisplayInformation/>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {this.state.information}
         </p>
+          <DisplayInformation command = {this.state.command}/>
+          {" "}
+        {" "}
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://residentevil.fandom.com/wiki/Umbrella_Corporation"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
-        </a>
-      </header>
+          Resident Evil . Umbrella Corporation{" "}
+        </a>{" "}
+      </header>{" "}
     </div>
-  );
-}
+  )
+}}
+// }
 
 export default App;
